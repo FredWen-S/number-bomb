@@ -1,0 +1,10 @@
+# Render Blueprint: one always-single Node web service. Rooms live in memory, so never scale past one instance.
+services:
+  - type: web
+    name: number-bomb
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /healthz
+    autoDeploy: true
